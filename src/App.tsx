@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ButtonsPanel from './components/buttonsPanel/ButoonsPanel';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import CustomJoke from './components/customJoke/CustomJoke';
+import FavouriteJoke from './components/favouriteJoke/FavouriteJoke';
+import { AppStyle } from './AppStyle';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppStyle>
+      <BrowserRouter>
+        <ButtonsPanel />
+        <Routes>
+          <Route path="/" element={<CustomJoke />} />
+          <Route path="/favouriteJoke" element={<FavouriteJoke />} />
+        </Routes>
+      </BrowserRouter>
+    </AppStyle>
   );
 }
 
