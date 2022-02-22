@@ -17,7 +17,9 @@ const joksSlice = createSlice({
     },
     addToFavoriteList(state: any, action: any) {
       localStorage.setItem("favoritItem", JSON.stringify([...state.favoriteList, action.payload.value]));
-      state.favoriteList = [...state.favoriteList, action.payload.value];
+      if (state.favoriteList[state.favoriteList.length - 1] !== action.payload.value) {
+        state.favoriteList = [...state.favoriteList, action.payload.value]
+      }
       if (state.favoriteList.length > 10) {
         state.favoriteList.shift();
       }

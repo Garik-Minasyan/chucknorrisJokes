@@ -10,7 +10,7 @@ export const FavoritePanel = styled.div`
   border-radius: 8px;
 `;
 
-export const FavoriteListUl = styled.ul`
+export const FavoriteListDiv = styled.div`
   padding: 2px 8px;
   width: 80%;
 `;

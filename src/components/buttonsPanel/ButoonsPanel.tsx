@@ -9,6 +9,7 @@ let myInterval: NodeJS.Timer;
 
 interface CurrentJoke {
   joks: JoksType;
+
 };
 
 interface JoksType {

@@ -1,4 +1,4 @@
-import { FavoritePanel, FavoriteListUl, FavoriteItemtP, FavoriteItemtPanel, DeleteButton } from "./FavoriteJokeStyle";
+import { FavoritePanel, FavoriteListDiv, FavoriteItemtP, FavoriteItemtPanel, DeleteButton } from "./FavoriteJokeStyle";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteOneJokeFromFL } from "../../store/joksReducer/joksSlice";
 
@@ -18,7 +18,7 @@ const FavouriteJoke = () => {
 
   return (
     <FavoritePanel>
-      <FavoriteListUl>
+      <FavoriteListDiv>
         {favoriteByState?.map((item: string, index: number) => {
           return (
             <FavoriteItemtPanel key={index}>
@@ -29,7 +29,10 @@ const FavouriteJoke = () => {
             </FavoriteItemtPanel>
           )
         })}
-      </FavoriteListUl>
+      </FavoriteListDiv>
+      {
+        favoriteByState.length <= 0 ? <FavoriteItemtP>We are not favorite jokes ...</FavoriteItemtP> : ""
+      }
     </FavoritePanel>
   )
 };
